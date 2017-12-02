@@ -1,5 +1,3 @@
-# Spreadsheet_to_Class
-
-# How to Use
+# つかいかた
 
 https://youtu.be/fDFRd0OMjxU
