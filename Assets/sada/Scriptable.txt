@@ -1,0 +1,35 @@
+﻿using UnityEditor;  //!< UnityEditorを追記してね
+using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+
+public class $ExcelData$asset : AssetPostprocessor   //!< AssetPostprocessorを継承するよ！
+{
+    static void OnPostprocessAllAssets(string[] importedAssets, string[] deletedAssets, string[] movedAssets, string[] movedFromAssetPaths)
+    {
+        
+        // インポートされたものリストをチェック
+        
+        foreach (string path in importedAssets)
+        {
+            // パス文字列に path(ここで言う.csないやつ)
+			var data = ($ExcelData$)AssetDatabase.LoadAssetAtPath("$PATH$" + ".asset", typeof($ExcelData$));
+
+            //if (path == "$PATH$" + ".cs")
+			if(data == null)
+            {
+                 data = ScriptableObject.CreateInstance<$ExcelData$>();
+                AssetDatabase.CreateAsset(data, "$PATH$" + ".asset");
+                data.hideFlags = HideFlags.NotEditable;
+            }
+			AssetDatabase.Refresh();
+			data.param.Clear();
+			$PARM$
+
+
+            
+        }
+    
+    }
+
+}
